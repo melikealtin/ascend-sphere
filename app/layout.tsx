@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
+import "easymde/dist/easymde.min.css";
 
-// Ana metin için Inter
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
 });
 
-// Başlıklar için Sora
 const sora = Sora({
   subsets: ["latin"],
   display: "swap",
