@@ -116,7 +116,7 @@
   }
 
   .nav_link {
-    @apply text-gray-600 hover:text-gray-900
+    @apply text-slate-800 hover:text-slate-900
     font-medium
     transition-colors;
   }
@@ -391,6 +391,93 @@
       hover:opacity-90 transition-opacity
       shadow-sm
       mt-6 ml-auto;
+  }
+
+  .profile_container {
+    @apply w-full 
+           min-h-screen 
+           py-16 px-4 md:px-6 
+           max-w-7xl mx-auto 
+           flex flex-col lg:flex-row gap-10
+           bg-white;
+  }
+
+  .profile_card {
+    @apply w-full max-w-sm lg:w-80
+           p-6
+           flex flex-col items-center
+           bg-white
+           border border-gray-200
+           rounded-lg
+           h-fit;
+  }
+
+  .profile_title {
+    @apply w-full mb-6
+           text-2xl font-bold
+           text-gray-900
+           text-center;
+  }
+
+  .profile_image {
+    @apply w-40 h-40
+           rounded-full 
+           object-cover 
+           border-4 border-gray-50
+           shadow-sm;
+  }
+
+  .profile_username {
+    @apply text-xl font-semibold
+           text-gray-900
+           mt-4;
+  }
+
+  .profile_bio {
+    @apply text-gray-600
+           text-center
+           text-sm
+           leading-relaxed
+           mt-2
+           max-w-xs;
+  }
+
+  .profile_stats {
+    @apply grid grid-cols-3 gap-4
+           w-full
+           mt-6 pt-6
+           border-t border-gray-100;
+  }
+
+  .profile_stat {
+    @apply flex flex-col items-center;
+  }
+
+  .profile_stat_number {
+    @apply text-lg font-semibold
+           text-gray-900;
+  }
+
+  .profile_stat_label {
+    @apply text-xs
+           text-gray-500
+           mt-1;
+  }
+
+  .profile_content {
+    @apply flex-1 
+           flex flex-col 
+           gap-6;
+  }
+
+  .profile_section_title {
+    @apply text-xl font-semibold 
+           text-gray-900 
+           mb-4;
+  }
+
+  .card_grid-sm {
+    @apply grid sm:grid-cols-2 gap-5;
   }
 }
 

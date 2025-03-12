@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
-import "easymde/dist/easymde.min.css";
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({

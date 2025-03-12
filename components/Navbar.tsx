@@ -1,6 +1,8 @@
 import { auth, signIn, signOut } from "@/auth";
 import Link from "next/link";
 import React from "react";
+import { BadgePlus, LogOut } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
@@ -18,11 +20,8 @@ const Navbar = async () => {
           {session && session?.user ? (
             <>
               <Link href="/startup/create" className="nav_link">
-                Create Startup
-              </Link>
-
-              <Link href={`/user/${session?.user?.name}`} className="nav_link">
-                {session?.user?.name}
+                <span className="max-sm:hidden"> Create Startup</span>
+                <BadgePlus className="size-4 sm:hidden text-slate-800 hover:text-slate-900 mb-1" />
               </Link>
 
               <form
@@ -31,10 +30,21 @@ const Navbar = async () => {
                   await signOut({ redirectTo: "/" });
                 }}
               >
-                <button type="submit" className="nav_button">
-                  Logout
+                <button type="submit" className="nav_link cursor-pointer">
+                  <span className="max-sm:hidden">Logout</span>
+                  <LogOut className="size-4 sm:hidden  text-slate-800 hover:text-slate-900" />
                 </button>
               </form>
+
+              <Link href={`/user/${session?.id}`} className="nav_link">
+                <Avatar className="size-19">
+                  <AvatarImage
+                    src={session?.user?.image || ""}
+                    alt={session?.user?.name || ""}
+                  />
+                  <AvatarFallback>AV</AvatarFallback>
+                </Avatar>
+              </Link>
             </>
           ) : (
             <form
@@ -44,7 +54,7 @@ const Navbar = async () => {
               }}
             >
               <button type="submit" className="nav_button">
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2 cursor-pointer">
                   Login with GitHub
                 </span>
               </button>
