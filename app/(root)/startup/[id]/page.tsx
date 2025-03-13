@@ -11,6 +11,8 @@ import { formatDate } from "@/lib/utils";
 
 const md = markdownit();
 
+export const experimental_ppr = true;
+
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
@@ -71,8 +73,6 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <p className="no-result">No details provided</p>
           )}
         </div>
-
-        <hr className="divider" />
 
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />

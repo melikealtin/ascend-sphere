@@ -213,6 +213,10 @@
         overflow-hidden;
   }
 
+  .startup-card_desc {
+    @apply font-normal text-[16px] line-clamp-2 my-3  break-all;
+  }
+
   .flex-between {
     @apply flex 
         justify-between 
